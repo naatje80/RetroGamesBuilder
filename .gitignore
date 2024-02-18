@@ -1,0 +1,7 @@
+dist/
+bin/
+c-drive/
+cdrom-image/
+meta/
+gamepackage/
+*-installer

@@ -1,0 +1,19 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/902/jazz-jackrabbit"
+      - "ICONURL=https://cdn2.steamgriddb.com/icon/13d85714ac4f21ecda59310b6a11cb92/32/256x256.png"
+      - "SPLASHURL=https://cdn2.steamgriddb.com/thumb/c47656f52e10d1f9ff93623c6d8ff801.jpg"
+      - "GAMENAME=JazzJackrabbit"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist

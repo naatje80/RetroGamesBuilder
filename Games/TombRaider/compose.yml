@@ -1,0 +1,19 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/348/tomb-raider"
+      - "ICONURL=https://cdn2.steamgriddb.com/icon/5456133e67453a4c86d63b50d1f8bc2e/32/256x256.png"
+      - "SPLASHURL=https://cdn2.steamgriddb.com/hero_thumb/5282af3088e9b096797b9d6b3a25a3eb.jpg"
+      - "GAMENAME=TombRaider"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist

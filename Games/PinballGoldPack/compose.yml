@@ -1,0 +1,23 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/6930/pinball-gold-pack"
+      - "ICONURLS=https://cdn2.steamgriddb.com/icon/eb6bdd281dfc2688a42174679b8e5bbd.png 
+                  https://cdn2.steamgriddb.com/icon/90c5841cb33b6ffdf75850044c595725.png 
+                  https://cdn2.steamgriddb.com/icon/55ca0f8cf5f3a2502642c73952910b88.png"
+      - "SPLASHURL=https://cdn.mobygames.com/covers/7110123-pinball-gold-pack-linux-front-cover.jpg"
+      - "GAMENAME=Pinball Gold Pack"
+      - "VENDOR_NAME=21stCenturyEntertainmentAndRebellion"
+      - "GAME_DESCRIPTION=Pinball Video Game"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist

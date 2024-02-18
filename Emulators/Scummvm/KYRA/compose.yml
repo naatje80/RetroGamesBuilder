@@ -1,0 +1,17 @@
+version: '2.1'
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  buildenv:
+    build: ../../../BuildEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "ENGINE=kyra"
+    volumes:
+      - ./dist:/dist
+      - ./scripts:/scripts

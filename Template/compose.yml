@@ -1,0 +1,21 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=URL"
+      - "ICONURL=URL"
+      - "SPLASHURL=URL"
+      - "GAMENAME=GameName"
+      - "VENDOR_NAME=Vendor"
+      - "GAME_DESCRIPTION=Some Video Game"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist
