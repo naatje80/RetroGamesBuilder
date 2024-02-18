@@ -11,7 +11,7 @@ services:
       - "HTTP_PROXY=http://172.17.0.1:3128"
       - "HTTPS_PROXY=http://172.17.0.1:3128"
       - "MOBYGAMESURL=URL"
-      - "ICONURL=URL"
+      - "ICONURLS=URL"
       - "SPLASHURL=URL"
       - "GAMENAME=GameName"
       - "VENDOR_NAME=Vendor"

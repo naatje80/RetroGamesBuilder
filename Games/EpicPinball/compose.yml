@@ -11,7 +11,7 @@ services:
       - "HTTP_PROXY=http://172.17.0.1:3128"
       - "HTTPS_PROXY=http://172.17.0.1:3128"
       - "MOBYGAMESURL=https://www.mobygames.com/game/263/epic-pinball"
-      - "ICONURL=https://cdn2.steamgriddb.com/icon_thumb/b1823297adf46a9cadba8244c11655ad.png"
+      - "ICONURLS=https://cdn2.steamgriddb.com/icon_thumb/b1823297adf46a9cadba8244c11655ad.png"
       - "SPLASHURL=https://cdn2.steamgriddb.com/thumb/179c7c9e38313b80618aa0d98f0a7961.jpg"
       - "GAMENAME=EpicPinball"
     volumes:

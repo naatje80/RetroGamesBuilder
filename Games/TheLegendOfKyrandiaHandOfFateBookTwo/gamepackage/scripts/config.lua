@@ -1,8 +1,8 @@
-local TOTAL_INSTALL_SIZE = 58619880;
-local GAMENAME = <SHORT_GAMENAME>;
-local LONG_GAMENAME = <GAMENAME>;
-local GAME_DESCRIPTION = <GAME_DESCRIPTION>;
-local VENDOR_NAME = <VENDOR_NAME>;
+local TOTAL_INSTALL_SIZE = 295572905;
+local GAMENAME = "TheLegendofKyrandiaHandofFateBookTwo";
+local LONG_GAMENAME = "The Legend of Kyrandia Hand of Fate Book Two";
+local GAME_DESCRIPTION = "Adventure Video Game";
+local VENDOR_NAME = "WestwoodStudios";
 
 local _ = MojoSetup.translate
 
@@ -57,4 +57,3 @@ Setup.Package
 }
 
 -- end of config.lua ...
-

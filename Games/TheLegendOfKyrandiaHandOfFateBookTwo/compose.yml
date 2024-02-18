@@ -1,0 +1,21 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/871/fables-fiends-hand-of-fate"
+      - "ICONURLS=https://cdn2.steamgriddb.com/icon/2a845b3e91df58cd29f565345c31d49a.ico"
+      - "SPLASHURL=https://cdn2.steamgriddb.com/grid/92fb0c6d1758261f10d052e6e2c1123c.png"
+      - "GAMENAME=The Legend of Kyrandia Hand of Fate Book Two"
+      - "VENDOR_NAME=WestwoodStudios"
+      - "GAME_DESCRIPTION=Adventure Video Game"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist

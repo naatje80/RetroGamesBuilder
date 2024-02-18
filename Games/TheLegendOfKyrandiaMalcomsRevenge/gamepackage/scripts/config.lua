@@ -1,8 +1,8 @@
-local TOTAL_INSTALL_SIZE = 58619880;
-local GAMENAME = <SHORT_GAMENAME>;
-local LONG_GAMENAME = <GAMENAME>;
-local GAME_DESCRIPTION = <GAME_DESCRIPTION>;
-local VENDOR_NAME = <VENDOR_NAME>;
+local TOTAL_INSTALL_SIZE = 490373763;
+local GAMENAME = "TheLegendofKyrandiaBookThreeMalcolmsRevenge";
+local LONG_GAMENAME = "The Legend of Kyrandia Book Three Malcolms Revenge";
+local GAME_DESCRIPTION = "Adventure Video Game";
+local VENDOR_NAME = "WestwoodStudios";
 
 local _ = MojoSetup.translate
 

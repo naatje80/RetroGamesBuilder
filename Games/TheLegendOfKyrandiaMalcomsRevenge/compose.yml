@@ -1,0 +1,21 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/872/the-legend-of-kyrandia-book-3-malcolms-revenge"
+      - "ICONURLS=https://cdn2.steamgriddb.com/icon/ecc92a19f0de821519b715d10cbf7c62.ico"
+      - "SPLASHURL=https://cdn2.steamgriddb.com/grid/941e1aaaba585b952b62c14a3a175a61.png"
+      - "GAMENAME=The Legend of Kyrandia Book Three Malcolms Revenge"
+      - "VENDOR_NAME=WestwoodStudios"
+      - "GAME_DESCRIPTION=Adventure Video Game"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist

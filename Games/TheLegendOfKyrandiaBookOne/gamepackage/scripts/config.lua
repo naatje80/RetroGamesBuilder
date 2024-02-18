@@ -1,6 +1,6 @@
 local TOTAL_INSTALL_SIZE = 171647248;
-local GAME_NAME = "TheLegendOfKyrandia";
-local LONG_GAME_NAME = "The Legend Of Kyrandia";
+local GAME_NAME = "TheLegendOfKyrandiaBookOne";
+local LONG_GAME_NAME = "The Legend Of Kyrandia Book One";
 local GAME_DESCRIPTION = "Adventure Video Game";
 local VENDOR_NAME = "WestwoodStudios";
 
@@ -53,32 +53,6 @@ Setup.Package
             commandline = "%0/start.sh pinfant",
             category = "Game"
         }
-
-        Setup.DesktopMenuItem
-        {
-            disabled = false,
-            name = "Pinball Dreams Deluxe",
-            genericname = "Pinball Dreams Deluxe",
-            tooltip = GAME_DESCRIPTION,
-            builtin_icon = false,
-            icon = "gameicon2.png",
-            commandline = "%0/start.sh pindrms",
-            category = "Game"
-        }
-
-        Setup.DesktopMenuItem
-        {
-            disabled = false,
-            name = "Pinall Illusions",
-            genericname = "Pinall Illusions",
-            tooltip = GAME_DESCRIPTION,
-            builtin_icon = false,
-            icon = "gameicon3.png",
-            commandline = "%0/start.sh pinill",
-            category = "Game"
-        }
-
-
     }
 }
 
