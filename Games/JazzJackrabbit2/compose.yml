@@ -1,0 +1,21 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/9554/jazz-jackrabbit-2-the-secret-files"
+      - "ICONURLS=https://cdn2.steamgriddb.com/icon/91836ea292e688863d5165ae32aef8ff/32/128x128.png"
+      - "SPLASHURL=https://cdn2.steamgriddb.com/hero/f6014624af1fcddd3f1e8da715d67d1e.png"
+      - "GAMENAME=Jazz Jackrabbit 2 The Secret Files"
+      - "VENDOR_NAME=EpicGames"
+      - "GAME_DESCRIPTION=Platform Video Game"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist

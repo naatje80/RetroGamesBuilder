@@ -14,14 +14,18 @@ cd /buildenv
 
 # First required to install sub-depencies to build SDL
 pacman -Suy --noconfirm libpipewire libpulse libglvnd
+
+git clone --depth 1 --branch v${PNGVERSION} https://github.com/pnggroup/libpng.git
+cd libpng
+./configure --prefix=/usr --disable-shared --enable-static 
+make -j $(nproc) install
+cd /buildenv
+
 git clone --depth=1 --branch release-${SDL2VERSION} https://github.com/libsdl-org/SDL.git
 cd SDL
 ./autogen.sh && ./configure --prefix=/usr --disable-shared --enable-static 
 make -j $(nproc) install
 cd /buildenv
-
-# Remove libpipewire and libpulse again including all depencies for a more static build 
-#pacman -Rsc --noconfirm libpipewire libpulse libnghttp3 libnghttp2 krb5 openssl 
 
 pacman -Syu --noconfirm cmake
 git clone --depth=1 --branch v${ZLIBVERSION} https://github.com/madler/zlib.git
@@ -41,12 +45,6 @@ cd vorbis
 ./autogen.sh && ./configure --prefix=/usr --disable-shared --enable-static 
 make -j $(nproc) install
 cd /buildenv
-
-#git clone --depth=1 --branch VER-`echo ${FREETYPEVERSION}|sed 's/\./-/g'` https://github.com/freetype/freetype.git
-#cd freetype
-#./autogen.sh && ./configure --prefix=/usr --disable-shared --enable-static 
-#make -j $(nproc) install
-#cd /buildenv
 
 git clone --depth=1 --branch v${SCUMMVMVERSION} https://github.com/scummvm/scummvm.git
 cd scummvm
@@ -74,4 +72,5 @@ strip scummvm
 cp scummvm /dist
 cp -r ../gui/themes /dist
 cp ../dists/engine-data/kyra.dat /dist
+cp ../dists/engine-data/fonts.dat /dist
 cd /buildenv

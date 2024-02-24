@@ -1,0 +1,12 @@
+diff -Naur scummvm_org/engines/ags/detection_tables.h scummvm/engines/ags/detection_tables.h
+--- scummvm_org/engines/ags/detection_tables.h	2024-02-24 15:14:40.212739827 +0000
++++ scummvm/engines/ags/detection_tables.h	2024-02-24 15:16:01.857513986 +0000
+@@ -4193,6 +4193,8 @@
+ 	GAME_ENTRY("gobliiins5-3", "Gobliiins5-Part3.ags", "b90879328ece625cb99b40bd447b4fef", 173236111),
+ 	// Steam release 2023-07-20
+ 	GAME_ENTRY_STEAM("gobliiins5-1", "Gobliiins5-Part1.ags", "41513db1bd8870e43426b9e94bb26ad1", 171800863),
++	// Steam release 2023-11-16
++	GAME_ENTRY_STEAM("gobliiins5-1", "Gobliiins5-Part1.ags", "41513db1bd8870e43426b9e94bb26ad1", 171800709),
+ 	GAME_ENTRY_EN_STEAM("goldenwake", "a-golden-wake.exe", "dbe281d93c914899886e77c09c3c65ec", 130844360), // Linux & Mac
+ 	GAME_ENTRY_EN_STEAM("goldenwake", "a-golden-wake.exe", "e7080df9729aae2a0097b752198f3cca", 130846774),
+ 	GAME_ENTRY_EN_STEAM("goldenwake", "a-golden-wake.exe", "409b71f7b73f30bef5098c6449505c1a", 130929070),  // Windows

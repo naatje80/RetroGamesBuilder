@@ -114,7 +114,8 @@ cp meta/* image/meta/
 cd image/
 #tar -c -I 'xz -9 -T3' -f ../data.tar.xz *
 #${MOJOBINARIERS}/make_self_extracting /gamepackage/${GAMENAME}-installer /gamepackage/data.tar.xz
-zip -9r ../pdata.zip *
+zip -9ry ../pdata.zip *
+
 echo "${MOJOBINARIERS}/make_self_extracting /dist/${SHORT_GAMENAME}-installer /gamepackage/pdata.zip"
 ${MOJOBINARIERS}/make_self_extracting /dist/${SHORT_GAMENAME}-installer /gamepackage/pdata.zip
 

@@ -1,0 +1,21 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/42243/pod-gold"
+      - "ICONURLS=https://cdn2.steamgriddb.com/icon/47a0a618c0365cf757ff3021ee5ef976/32/256x256.png"
+      - "SPLASHURL=https://cdn2.steamgriddb.com/hero/9306c246453aa856c788698f5f3b8954.png"
+      - "GAMENAME=POD Gold"
+      - "VENDOR_NAME=Ubisoft"
+      - "GAME_DESCRIPTION=Race Video Game"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist

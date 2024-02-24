@@ -2,8 +2,13 @@ dist/
 Games/*/gamepackage/meta
 Games/*/gamepackage/data/bin
 Games/*/gamepackage/data/c-drive
+Games/*/gamepackage/data/lib
+Games/*/gamepackage/data/include
+Games/*/gamepackage/data/share
+Games/*/gamepackage/data/wineprefix
 Games/*/gamepackage/data/cdrom-image
 Games/*/gamepackage/data/gamedata
+Games/*/gamepackage/image
 *.bin
 *.cue
 *.iso

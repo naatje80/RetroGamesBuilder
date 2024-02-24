@@ -1,0 +1,21 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/202606/gobliiins-5"
+      - "ICONURLS=https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/2475980/6a2e56fafb83e1ac35ed641bb305e22508cf45f9.ico"
+      - "SPLASHURL=https://cdn.cloudflare.steamstatic.com/steam/apps/2475980/library_hero.jpg?t=1688291835"
+      - "GAMENAME=Gobliiins 5"
+      - "VENDOR_NAME=SchnibbleProductions"
+      - "GAME_DESCRIPTION=Adventure Video Game"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist
