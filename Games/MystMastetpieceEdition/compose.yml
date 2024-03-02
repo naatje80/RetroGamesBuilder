@@ -1,0 +1,21 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/1253/myst-masterpiece-edition"
+      - "ICONURLS=https://cdn2.steamgriddb.com/icon/9826ee8eb827f4adacdb88e615550686/32/256x256.png"
+      - "SPLASHURL=https://cdn2.steamgriddb.com/hero_thumb/3b2d48479d5ab02b00f58782c754bb7a.jpg"
+      - "GAMENAME=Myst Masterpiece Edition"
+      - "VENDOR_NAME=RedOrbEntertainment"
+      - "GAME_DESCRIPTION=Adventure Video Game"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist
