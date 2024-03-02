@@ -1,8 +1,8 @@
-local TOTAL_INSTALL_SIZE = 1496459424;
-local GAMENAME = "MystMasterpieceEdition";
-local LONG_GAMENAME = "Myst Masterpiece Edition";
+local TOTAL_INSTALL_SIZE = 3030155851;
+local GAMENAME = "RivenTheSequeltoMyst";
+local LONG_GAMENAME = "Riven The Sequel to Myst";
 local GAME_DESCRIPTION = "Adventure Video Game";
-local VENDOR_NAME = "RedOrbEntertainment";
+local VENDOR_NAME = "Cyan";
 
 local _ = MojoSetup.translate
 

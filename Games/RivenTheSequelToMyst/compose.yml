@@ -1,0 +1,21 @@
+services:
+  squid-container:
+    image: "ubuntu/squid:latest"
+    ports:
+      - "3128:3128"
+    environment:
+      - "TZ=UTC+1"
+  packageenv:
+    build: ../../PackageEnv/.
+    environment:
+      - "HTTP_PROXY=http://172.17.0.1:3128"
+      - "HTTPS_PROXY=http://172.17.0.1:3128"
+      - "MOBYGAMESURL=https://www.mobygames.com/game/1262/riven-the-sequel-to-myst"
+      - "ICONURLS=https://cdn2.steamgriddb.com/icon/3514f1f7f9a8c61c063aa8cd834c5561.png"
+      - "SPLASHURL=https://cdn2.steamgriddb.com/hero/16cc44cd8988e0bf8db384192210c37c.png" 
+      - "GAMENAME=Riven The Sequel to Myst"
+      - "VENDOR_NAME=Cyan"
+      - "GAME_DESCRIPTION=Adventure Video Game"
+    volumes:
+      - ./gamepackage:/gamepackage
+      - ./:/dist
