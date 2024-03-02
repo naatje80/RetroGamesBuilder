@@ -56,9 +56,10 @@ cd /buildenv
 git clone --depth=1 --branch v${SCUMMVMVERSION} https://github.com/scummvm/scummvm.git
 cd scummvm
 patch -p1 < /scripts/gobliiins5_detection.patch
+# Force removal of unrequired but detected depencies
+pacman -Rdd --noconfirm brotli bzip2
 mkdir build
 cd build
-
 ../configure --enable-release \
 	--enable-static \
 	--disable-all-engines \

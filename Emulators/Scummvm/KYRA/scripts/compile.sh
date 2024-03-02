@@ -1,6 +1,7 @@
 #! /bin/bash
 set -e
 
+PNGVERSION=1.6.43
 SDL2VERSION=2.30.0
 ZLIBVERSION=1.3.1
 SCUMMVMVERSION=2.8.0
@@ -47,6 +48,8 @@ make -j $(nproc) install
 cd /buildenv
 
 git clone --depth=1 --branch v${SCUMMVMVERSION} https://github.com/scummvm/scummvm.git
+# Force removal of unrequired but detected depencies
+pacman -Rdd --noconfirm brotli bzip2
 cd scummvm
 mkdir build
 cd build

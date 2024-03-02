@@ -61,6 +61,8 @@ make -j $(nproc) install
 cd /buildenv
 
 git clone --depth=1 --branch v${SCUMMVMVERSION} https://github.com/scummvm/scummvm.git
+# Force removal of unrequired but detected depencies
+pacman -Rdd --noconfirm brotli bzip2
 cd scummvm
 mkdir build
 cd build
